@@ -1,0 +1,146 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="meta-title">L’Ovale Bar — esprit rugby à Couches</title>
+  <meta name="description" id="meta-desc" content="Bar–tabac–presse du village. Diffusions de matchs, apéros d’avant/pendant/après match, bonne ambiance garantie.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:image" content="og-image.png">
+  <meta name="theme-color" content="#0a0a0a">
+  <style>
+    :root { --bg:#0b0c10; --card:#121418; --text:#eef1f5; --muted:#b8c0cc; --accent:#2dd4bf; --btn:#1f2937; --btn-hover:#111827; --ring:rgba(45,212,191,.35); --shadow:0 10px 30px rgba(0,0,0,.35); --radius:16px; }
+    *{box-sizing:border-box} html,body{margin:0;padding:0;background:radial-gradient(1200px 800px at 10% -10%, rgba(34,197,94,0.10), transparent 40%), var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:720px;margin:0 auto;padding:24px}
+    header{display:grid;gap:12px;padding:24px;background:linear-gradient(180deg, rgba(34,197,94,.12), rgba(45,212,191,.10) 60%, transparent);border-radius:var(--radius);border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-size:28px;background:#111827;border:1px solid rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+    h1{font-size:1.6rem;margin:0} p.sub{margin:0;color:var(--muted)}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .badge{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    .links{display:grid;gap:12px;margin-top:18px}
+    .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px 16px;border-radius:14px;background:var(--btn);border:1px solid rgba(255,255,255,.06);transition:transform .04s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;box-shadow:var(--shadow)}
+    .btn:hover{background:var(--btn-hover);border-color:rgba(255,255,255,.12);transform:translateY(-1px)} .btn span{font-weight:600}.btn .hint{font-weight:500;color:var(--muted)} .btn.primary{background:linear-gradient(180deg, rgba(45,212,191,.16), rgba(45,212,191,.06));border-color:rgba(45,212,191,.45);box-shadow:0 8px 24px var(--ring)}
+    section.card{margin-top:18px;padding:18px;border-radius:14px;background:var(--card);border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)}
+    h2{font-size:1.05rem;margin:0 0 10px}
+    ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:8px} ul.clean li{display:flex;gap:10px;align-items:start}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:10px} .muted{color:var(--muted);font-size:14px}
+    .affiches{display:grid;grid-template-columns:1fr;gap:12px} .affiches a{display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+    .affiches img{width:100%;display:block}
+    footer{margin:26px 0 10px;text-align:center;color:var(--muted);font-size:12px}
+    @media (min-width:640px){.grid-2{grid-template-columns:1fr 1fr} header{padding:28px} .affiches{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">🏉</div>
+        <div>
+          <h1 id="title">L’Ovale Bar — esprit rugby à Couches</h1>
+          <p id="subtitle" class="sub"></p>
+          <div class="badges">
+            <span class="badge">Matchs en direct</span>
+            <span class="badge">Convivialité rugby</span>
+            <span class="badge">Au cœur de Couches</span>
+          </div>
+        </div>
+      </div>
+      <div id="buttons" class="links"></div>
+    </header>
+
+    <section class="card">
+      <h2>À la une</h2>
+      <ul id="a-la-une" class="clean"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Affiches & soirées</h2>
+      <div id="affiches" class="affiches"></div>
+      <p class="muted">Ajoutez des visuels dans le dossier <code>media/</code> et référencez-les dans <code>data.json</code> (clé <code>affiches</code>).</p>
+    </section>
+
+    <section class="card">
+      <h2>Infos pratiques</h2>
+      <div class="grid-2">
+        <div>
+          <p><strong>Adresse</strong><br><span id="address"></span></p>
+          <p><strong>Téléphone</strong><br><a id="phone" href="#">—</a></p>
+          <p><strong>Facebook</strong><br><a href="https://www.facebook.com/p/LOvale-Bar-61556803733279/?utm_source=site" target="_blank" rel="noopener">L’Ovale Bar sur Facebook</a></p>
+        </div>
+        <div>
+<pre id="horaires" style="margin:0; white-space:pre-wrap; line-height:1.4; background:#0d1117; padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,0.06)"></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="extra-links-wrap" style="display:none">
+      <h2>Liens utiles</h2>
+      <div id="extra-links" class="links"></div>
+    </section>
+
+    <footer>© L’Ovale Bar — Couches · Page tampon</footer>
+  </div>
+
+  <script>
+    async function load() {
+      const res = await fetch('data.json', {cache: 'no-store'});
+      const d = await res.json();
+      // Meta & headers
+      document.getElementById('title').textContent = d.title || '';
+      document.getElementById('subtitle').textContent = d.subtitle || '';
+      document.getElementById('meta-title').textContent = d.title || '';
+      document.getElementById('meta-desc').setAttribute('content', d.subtitle || '');
+      // Buttons
+      const buttons = document.getElementById('buttons');
+      (d.buttons || []).forEach(b => {
+        const a = document.createElement('a');
+        a.className = 'btn' + (b.primary ? ' primary' : '');
+        a.href = b.url; if (a.href.startsWith('http')) { a.target = '_blank'; a.rel = 'noopener'; }
+        a.innerHTML = `<span>${b.label}</span>${b.hint ? `<span class="hint">${b.hint}</span>` : ''}`;
+        buttons.appendChild(a);
+      });
+      // A la une
+      const ul = document.getElementById('a-la-une');
+      (d.a_la_une || []).forEach(t => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span class="k">•</span>${t}`;
+        ul.appendChild(li);
+      });
+      // Infos
+      document.getElementById('address').textContent = d.address || '';
+      const phone = document.getElementById('phone');
+      phone.textContent = d.phone_display || '';
+      phone.href = d.phone_link || '#';
+      // Horaires
+      const horaires = (d.horaires || []).join('\n');
+      document.getElementById('horaires').textContent = 'Horaires (susceptibles de modifications)\n' + horaires;
+      // Extra links
+      const extraWrap = document.getElementById('extra-links-wrap');
+      const extra = document.getElementById('extra-links');
+      if (d.extra_links && d.extra_links.length) {
+        extraWrap.style.display = '';
+        d.extra_links.forEach(b => {
+          const a = document.createElement('a');
+          a.className = 'btn';
+          a.href = b.url; if (a.href.startsWith('http')) { a.target = '_blank'; a.rel = 'noopener'; }
+          a.innerHTML = `<span>${b.label}</span>${b.hint ? `<span class="hint">${b.hint}</span>` : ''}`;
+          extra.appendChild(a);
+        });
+      }
+      // Affiches
+      const grid = document.getElementById('affiches');
+      (d.affiches || []).forEach(x => {
+        const link = document.createElement('a');
+        link.href = x.url || '#'; if (x.url && x.url.startsWith('http')) { link.target='_blank'; link.rel='noopener'; }
+        link.title = x.title || '';
+        link.innerHTML = `<img src="${x.image}" alt="${x.title || 'Affiche'}">`;
+        grid.appendChild(link);
+      });
+    }
+    load();
+  </script>
+</body>
+</html>

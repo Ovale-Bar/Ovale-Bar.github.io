@@ -1,0 +1,48 @@
+{
+  "title": "L’Ovale Bar — Esprit Rugby à Couches",
+  "subtitle": "Bar–Tabac–Jeux FDJ, Bonne ambiance garantie.",
+  "address": "5 Grande Rue, 71490 Couches",
+  "phone_display": "03 58 09 69 01",
+  "phone_link": "tel:+33358096901",
+  "buttons": [
+    {
+      "label": "📍 Nous trouver",
+      "hint": "Google Maps",
+      "url": "https://maps.app.goo.gl/4Ext6goyV4NaLkaq5",
+      "primary": true
+    },
+    {
+      "label": "📣 Facebook",
+      "hint": "Actus & photos",
+      "url": "https://www.facebook.com/p/LOvale-Bar-61556803733279/?utm_source=site"
+    }
+  ],
+  "a_la_une": [
+   
+    "Bières pression, Vin local...",
+    "Tabac • Jeux • FDJ"
+  ],
+  "horaires": [
+    "Lundi :    07:00–13:00, 15:00–19:00",
+    "Mardi :    07:00–13:00, 15:00–19:00",
+    "Mercredi : Fermé",
+    "Jeudi :    07:00–13:00, 15:00–19:00",
+    "Vendredi : 07:00–13:00, 15:00–20:00",
+    "Samedi :   07:00–13:00, 15:00–20:00",
+    "Dimanche : 07:30–13:00"
+  ],
+  "extra_links": [
+    {
+      "label": "☎️ Appeler le bar",
+      "hint": "Composeur d’appel",
+      "url": "tel:+33358096901"
+    }
+  ],
+  "affiches": [
+    {
+      "title": "Soirée Beaujolais Nouveau",
+      "image": "media/affiche_vitrine_beaujolais_A3.png",
+      "url": "https://www.facebook.com/p/LOvale-Bar-61556803733279/"
+    }
+  ]
+}
